@@ -1,0 +1,14 @@
+# Executables
+*.exe
+
+# Object files
+*.o
+*.obj
+
+# Build artifacts
+build/
+Debug/
+Release/
+
+# Editor
+.vscode/
