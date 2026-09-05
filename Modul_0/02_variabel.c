@@ -12,4 +12,5 @@ int main()
     printf("%d %d\n", x, y);
     printf("%d %c\n", a, b);
     return 0;
+    
 }

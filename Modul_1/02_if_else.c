@@ -11,6 +11,7 @@ int main()
     else
     {
         printf("X\n");
+        print
     }
     return 0;
 }
