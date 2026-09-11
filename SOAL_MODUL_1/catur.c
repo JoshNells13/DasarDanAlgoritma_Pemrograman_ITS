@@ -1,62 +1,42 @@
 #include <stdio.h>
 
-int main() {
-    char awal[3], akhir[3];
-    int dx, dy;
-    int ada = 0;
+int main ()
+{
+    char start[3], Finish[3];
 
-    scanf("%s %s", awal, akhir);
+    scanf ("%s %s",start ,Finish);
 
-    // Hitung jarak kolom
-    dx = akhir[0] - awal[0];
+    int Selisih1 = start[0] - Finish[0];
+    int selisih2 = start[1] - Finish [1];
+    int spasi = 0;
 
-    // Hitung jarak baris
-    dy = akhir[1] - awal[1];
-
-    // Ubah menjadi nilai positif
-    if (dx < 0)
-        dx = -dx;
-
-    if (dy < 0)
-        dy = -dy;
-
-    // KUDA
-    if ((dx == 1 && dy == 2) || (dx == 2 && dy == 1)) {
+    if(Selisih1 != 0 || selisih2 != 0) {
+    if (Selisih1 < 0){
+        Selisih1 = -Selisih1;
+    }
+    if (selisih2 <0) {
+        selisih2 = -selisih2;
+    }
+    if((Selisih1 == 2 && selisih2 == 1)||(Selisih1 == 1 && selisih2 == 2) ) {
+        if(spasi == 1) printf(" ");
         printf("KUDA");
-        ada = 1;
+        spasi = 1;
     }
-
-    // BENTENG
-    if (dx == 0 || dy == 0) {
-        if (ada)
-            printf(" ");
-
+    if(Selisih1 == 0 || selisih2 == 0){
+        if(spasi == 1)printf(" ");
         printf("BENTENG");
-        ada = 1;
+        spasi = 1;
     }
-
-    // GAJAH
-    if (dx == dy && dx > 0) {
-        if (ada)
-            printf(" ");
-
+    if(Selisih1 == selisih2) {
+        if(spasi == 1) printf(" ");
         printf("GAJAH");
-        ada = 1;
+        spasi = 1;
     }
-
-    // RATU
-    if ((dx == 0 || dy == 0) || dx == dy) {
-        if (ada)
-            printf(" ");
-
+    if((Selisih1 == 0 ||selisih2 == 0)||(Selisih1 == selisih2)) {
+        if(spasi == 1) printf(" ");
         printf("RATU");
-        ada = 1;
+        spasi = 1;
     }
-
-    // Tidak ada bidak yang cocok
-    if (ada == 0) {
-        printf("TIDAK ADA");
     }
-
-    return 0;
+    if(spasi == 0)printf("TIDAK ADA");
 }
